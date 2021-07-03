@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>fly high</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+
+    
+
+
+
+    <link rel="stylesheet" href="newstyle.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <!-- Font Awesome JS -->
+    <style>
+        .uploadcard{
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+        .uploadcard-body{
+            padding: 5%;
+        }
+        .con-input-file {
+        border: 2px dashed rgba(0,0,0,.08);
+        border-radius: 30px;
+        margin-right: 50px;
+        margin-left: 50px;
+        position: sticky;
+        width: 200px;
+        height: 200px;
+        transition: all .25s ease, border 0s;
+    }
+    .hasFile {
+        border: 0px dashed rgba(0,0,0,0);
+        background: rgba(0,0,0,.03);
+    }
+    .hasFile .img-1, .hasFile .img-2, .hasFile .img-3{
+        opacity: 0;
+    }
+    .hasFile .con-text{
+        opacity: 0;
+    }
+    .hasFile .remove-image {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+    }
+    .hasFile .bg {
+        transform: scale(1);
+        opacity: 1;
+    }
+    .drop {
+        background: rgba(0,0,0,.03);
+        border: 2px dashed rgba(0,0,0,0);
+        transform: scale(1.05);
+    }
+    .drop .img-1 svg{
+        transform: scale(1);
+    }
+    .drop .img-2 .square-1{
+        transform: scale(.95) rotate(-10deg);
+    }
+    .drop .img-3 .square-2{
+        transform: scale(.9) rotate(10deg);
+    }
+    .drop .con-text {
+        opacity: 0;
+        transform: scale(.85) translate(0,-15px);
+    }
+    .con-input-file input {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        z-index: 10;
+        opacity: 0;
+        display: block;
+    }
+    .remove-image {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border-radius: 50%;
+        border: 0px;
+        font-size: 1.5rem;
+        margin: 10px;
+        cursor: pointer;
+        z-index: 1500;
+        opacity: 0;
+        transform: scale(.5);
+        visibility: hidden;
+        transition: all .25s ease;
+        background: #F1F3F6;
+        box-shadow: 0px 5px 30px 0px rgba(0,0,0,.08);
+    }
+    .con-bg {
+        position: absolute;
+        border-radius: inherit;
+        max-width: 100%;
+        max-height: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .bg {
+        z-index: 200;
+        pointer-events: none;
+        transition: all .25s ease;
+        opacity: 0;
+        transform: scale(.2);
+        height: 100%;
+    }
+    .con-text {
+        position: absolute;
+        z-index: 100;
+        pointer-events: none;
+        margin-top: 150px;
+        font-weight: 600;
+        text-align: center;
+        opacity: .5;
+        font-size: .75rem;
+        transition: all .25s ease;
+    }
+    .img-1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+        pointer-events: none;
+    }
+    .img-1 {
+        position: absolute;
+        pointer-events: none;
+    }
+    .img-1 svg {
+        width: 100px;
+        transition: all .25s ease;
+    }
+    .img-2 {
+        position: absolute;
+        z-index: -1;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+    }
+    .square-1 {
+        width: 90px;
+        height: 76px;
+        background: linear-gradient(0deg, #93e5b0 0%, #65e0db 100%);
+        border-radius: 10px;
+        margin-top: -10px;
+        margin-left: 0px;
+        transform: rotate(-10deg);
+        pointer-events: none;
+    }
+    .img-3 {
+        position: absolute;
+        z-index: -2;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+    }
+    .square-2 {
+        transform: rotate(10deg);
+        width: 90px;
+        height: 76px;
+        background: linear-gradient(90deg, #ffa936 0%, #ff6359 100%);
+        border-radius: 10px;
+        margin-top: -4px;
+        transform: rotate(10deg);
+        pointer-events: none;
+    }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <div class="d-flex justify-content-around">
+
+                    <img src="img_avatar.png" alt="Avatar" class="sidebaravatar">
+
+                    <div class="navbarprofile">
+
+                        <p class="username">Your Name</p>
+                        <p class="userid">@Your id <button class="btn btn-sm btn-editprofile"><i
+                                    class='bx bxs-message-square-edit bx-md'></i></button></p>
+
+
+
+                    </div>
+
+
+                </div>
+                <div class="d-flex justify-content-around">
+                    <div class="navbarcard">
+                        <div class="navbarcard-body">Followers<br><span class="navcardnumber"></span>123</div>
+                    </div>
+                    <div class="navbarcard">
+                        <div class="navbarcard-body">Following<br><span class="navcardnumber"></span>123</div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-home bx-sm bx-tada-hover'></i>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="marketplace.html">
+                        <i class='bx bxs-shopping-bags bx-sm bx-tada-hover'></i>
+                        Market Place
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-bell bx-sm bx-tada-hover'></i>
+                        Notifications
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-camera bx-sm bx-tada-hover'></i>
+                        UPLOAD POST
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-user-circle bx-sm bx-tada-hover'></i>
+                        Your Profile
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-question-mark bx-sm bx-tada-hover'></i>
+                        FAQ
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-user-account bx-sm bx-tada-hover'></i>
+                        Contact us
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-user-account bx-sm bx-tada-hover'></i>
+                        Logout
+                    </a>
+                </li>
+
+            </ul>
+
+
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+            <div class="d-flex justify-content-between marketnavbar bg-white sticky-top ">
+                <a href="index.html">
+                    <div class="p-2 "><i class='bx bxs-chevron-left bx-sm'></i></div>
+                </a>
+                <div class="p-2 marketplace-title">Upload Post</div>
+                <div class="p-2 ">
+                    <i class='bx bx-search-alt-2'></i>
+                    <i class='bx bx-bookmark'></i>
+
+                </div>
+            </div>
+
+ 
+
+            <div class="d-flex justify-content-center uploadcards">
+                
+                        <div class="uploadcard border bg-white ">
+                            <div class="uploadcard-body">
+                                <div class="d-flex justify-content-center"></div>
+                                <div class="con-input-file">
+                                    <button onclick="handleClickRemove()" class="remove-image">
+                                        <i class='bx bx-x'></i>
+                                    </button>
+                                    <div class="con-bg">
+                                        <img class="bg" src="" alt="">
+                                    </div>
+                                    <div class="img-1">
+                                        <svg id="Capa_1" enable-background="new 0 0 510 510" viewBox="0 0 510 510"
+                                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                            <linearGradient id="lg1">
+                                                <stop offset="0" stop-color="#cdec7a" />
+                                                <stop offset=".2157" stop-color="#b0e995" />
+                                                <stop offset=".5613" stop-color="#87e4bb" />
+                                                <stop offset=".8347" stop-color="#6ee1d2" />
+                                                <stop offset="1" stop-color="#65e0db" />
+                                            </linearGradient>
+                                            <linearGradient id="SVGID_3_" gradientTransform="matrix(.983 -.185 .185 .983 55.608 42.369)"
+                                                gradientUnits="userSpaceOnUse" x1="15.52" x2="340.888" xlink:href="#lg1" y1="104.705"
+                                                y2="430.073" />
+                                            <linearGradient id="lg2">
+                                                <stop offset="0" stop-color="#cdec7a" stop-opacity="0" />
+                                                <stop offset=".2354" stop-color="#9ad57d" stop-opacity=".235" />
+                                                <stop offset=".6035" stop-color="#51b482" stop-opacity=".604" />
+                                                <stop offset=".8679" stop-color="#239f85" stop-opacity=".868" />
+                                                <stop offset="1" stop-color="#119786" />
+                                            </linearGradient>
+                                            <linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="491.682" x2="450.637" xlink:href="#lg2"
+                                                y1="256.546" y2="256.546" />
+                                            <linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="176.731" x2="176.731" xlink:href="#lg2"
+                                                y1="466.917" y2="442.601" />
+                                            <linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="88.264" x2="413.632" y1="111.753"
+                                                y2="437.121">
+                                                <stop offset="0" stop-color="#f8f6fb" />
+                                                <stop offset="1" stop-color="#efdcfb" />
+                                            </linearGradient>
+                                            <linearGradient id="SVGID_7_" gradientUnits="userSpaceOnUse" x1="112.768" x2="430.112" y1="101.155"
+                                                y2="514.021">
+                                                <stop offset="0" stop-color="#18cefb" />
+                                                <stop offset=".2969" stop-color="#2bb9f9" />
+                                                <stop offset=".7345" stop-color="#42a0f7" />
+                                                <stop offset="1" stop-color="#4a97f6" />
+                                            </linearGradient>
+                                            <linearGradient id="SVGID_8_" gradientUnits="userSpaceOnUse" x1="75.588" x2="214.616" y1="316.53"
+                                                y2="497.406">
+                                                <stop offset="0" stop-color="#cdec7a" />
+                                                <stop offset=".2154" stop-color="#b0e995" stop-opacity=".784" />
+                                                <stop offset=".5604" stop-color="#87e4bb" stop-opacity=".439" />
+                                                <stop offset=".8334" stop-color="#6ee1d2" stop-opacity=".165" />
+                                                <stop offset=".9985" stop-color="#65e0db" stop-opacity="0" />
+                                            </linearGradient>
+                                            <linearGradient id="SVGID_9_" gradientUnits="userSpaceOnUse" x1="198.822" x2="366.499" xlink:href="#lg1"
+                                                y1="288.474" y2="506.622" />
+                                            <linearGradient id="SVGID_10_" gradientUnits="userSpaceOnUse" x1="117.242" x2="171.618" y1="131.922"
+                                                y2="202.666">
+                                                <stop offset="0" stop-color="#ffd945" />
+                                                <stop offset=".3043" stop-color="#ffcd3e" />
+                                                <stop offset=".8558" stop-color="#ffad2b" />
+                                                <stop offset="1" stop-color="#ffa325" />
+                                            </linearGradient>
+                                            <path
+                                                d="m424.01 448.166h-389.245c-18.715 0-33.886-15.171-33.886-33.886v-322.806c0-18.715 15.171-33.886 33.886-33.886h389.245c18.715 0 33.886 15.171 33.886 33.886v322.806c0 18.715-15.171 33.886-33.886 33.886z"
+                                                fill="url(#SVGID_6_)" />
+                                            <g>
+                                                <path
+                                                    d="m392.279 416.326h-325.782c-15.663 0-28.361-12.698-28.361-28.361v-270.175c0-15.663 12.698-28.361 28.361-28.361h325.782c15.663 0 28.361 12.698 28.361 28.361v270.175c0 15.663-12.698 28.361-28.361 28.361z"
+                                                    fill="url(#SVGID_7_)" />
+                                                <g>
+                                                    <path
+                                                        d="m252.069 416.326h-185.567c-15.666 0-28.37-12.694-28.37-28.359v-44.29l47.082-57.228c15.538-18.903 44.46-18.903 60.009 0l29.315 35.64z"
+                                                        fill="url(#SVGID_8_)" />
+                                                    <path
+                                                        d="m420.643 316.75v71.217c0 15.666-12.704 28.359-28.37 28.359h-295.268l77.532-94.237 95.246-115.783c15.538-18.892 44.471-18.892 60.009 0z"
+                                                        fill="url(#SVGID_9_)" />
+                                                </g>
+                                                <circle cx="137.225" cy="157.919" fill="url(#SVGID_10_)" r="40.219" />
+                                            </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="img-2">
+                                        <div class="square-1"></div>
+                                    </div>
+                                    <div class="img-3">
+                                        <div class="square-2"></div>
+                                    </div>
+                                    <div class="con-text">
+                                        Drop your image here, or Browse
+                                    </div>
+                                    <input class="input" onchange="processFile(event)" ondrop="dropHandler(event)"
+                                        ondragover="dragOverHandler(event)" ondragleave="dragLeave(event)" ondragenter="dragEnter(event)"
+                                        ondragenter="dragEnter(event)" type="file" name="" id="">
+                                </div>
+                            
+                            </div>
+                          </div>
+                  
+            </div>
+        </div>
+    </div>
+
+    <!-- MOBILE NAV -->
+    <div class="bottom-navbar">
+      
+        <button class=" bottom-navbtn">
+            <a href="index.html"><i class='bx bx-home bx-tada-hover '></i></a> 
+            
+        </button>
+        <button class="bottom-navbtn">
+            <a href="marketplace.html"><i class='bx bx-shopping-bag bx-tada-hover'></i></a>
+        </button>
+        <button
+            class="float bottom-navbtn">
+           <a href="uploadpost.html "><i class='bx bx-plus' ></i></a> 
+        </button>
+        <button class="bottom-navbtn">
+            <a href="notification.html"><i class='bx bx-heart bx-tada-hover '></i></a>
+        </button>
+        <button class="bottom-navbtn">
+            <a href="profile.html"><i class='bx bx-user bx-tada-hover' ></i></a>
+        </button>
+    </div>
+    
+    <!-- END MOBILE NAV -->
+    <script>
+
+        const conFile = document.querySelector('.con-input-file')
+        const img1 = document.querySelector('.img-1')
+        const img2 = document.querySelector('.img-2')
+        const img3 = document.querySelector('.img-3')
+        const imgFile = document.querySelector('.bg')
+        const input = document.querySelector('.input')
+        let one = false
+
+        function dropHandler(evt) {
+            console.log('File(s) dropped');
+            conFile.classList.remove('drop')
+            anime({
+                targets: '.img-1',
+                left: `200px`,
+                top: `200px`,
+                duration: 400
+            })
+            anime({
+                targets: '.img-2',
+                left: `200px`,
+                top: `200px`,
+                duration: 600
+            })
+            anime({
+                targets: '.img-3',
+                left: `200px`,
+                top: `200px`,
+                duration: 800
+            })
+        }
+
+        function dragOverHandler(evt) {
+            anime({
+                targets: '.img-1',
+                left: `${evt.layerX}px`,
+                top: `${evt.layerY}px`,
+                duration: 200
+            })
+            anime({
+                targets: '.img-2',
+                left: `${evt.layerX}px`,
+                top: `${evt.layerY}px`,
+                duration: 300
+            })
+            anime({
+                targets: '.img-3',
+                left: `${evt.layerX}px`,
+                top: `${evt.layerY}px`,
+                duration: 400
+            })
+            conFile.classList.add('drop')
+            evt.preventDefault();
+        }
+
+        function dragLeave(evt) {
+            conFile.classList.remove('drop')
+            setTimeout(() => {
+                anime({
+                    targets: '.img-1',
+                    left: `200px`,
+                    top: `200px`,
+                    duration: 400,
+                })
+                anime({
+                    targets: '.img-2',
+                    left: `200px`,
+                    top: `200px`,
+                    duration: 600,
+                })
+                anime({
+                    targets: '.img-3',
+                    left: `200px`,
+                    top: `200px`,
+                    duration: 800,
+                })
+            }, 50);
+        }
+
+        function dragEnter(evt) {
+            conFile.classList.add('drop')
+        }
+
+        function processFile(event) {
+            function getBase64(file) {
+                const reader = new FileReader()
+                reader.readAsDataURL(file)
+                reader.onload = function () {
+                    imgFile.src = reader.result
+                    conFile.classList.add('hasFile')
+                }
+            }
+
+            const file = event.target.files[0]
+            getBase64(file)
+        }
+
+        function handleClickRemove() {
+            conFile.classList.remove('hasFile')
+            setTimeout(() => {
+                imgFile.src = ''
+            }, 250);
+            input.type = 'text'
+            input.type = 'file'
+        }
+    </script>
+
+
+    <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js">
+    </script>
+
+
+
+</body>
+
+</html>

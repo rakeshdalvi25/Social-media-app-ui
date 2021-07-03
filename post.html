@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Notifications</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+
+
+    <link rel="stylesheet" href="newstyle.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <!-- Font Awesome JS -->
+    <style>
+        .marketnavbar {
+            font-size: 23px;
+            margin-left: -5px;
+            padding-top: 5px;
+            padding-right: 5px;
+            padding-left: 5px;
+            height: 65px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+
+
+        }
+        .postpage{
+            margin-top: 10px;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <div class="d-flex justify-content-around">
+
+                    <img src="img_avatar.png" alt="Avatar" class="sidebaravatar">
+
+                    <div class="navbarprofile">
+
+                        <p class="username">Your Name</p>
+                        <p class="userid">@Your id <button class="btn btn-sm btn-editprofile"><i
+                                    class='bx bxs-message-square-edit bx-md'></i></button></p>
+
+
+
+                    </div>
+
+
+                </div>
+                <div class="d-flex justify-content-around">
+                    <div class="navbarcard">
+                        <div class="navbarcard-body">Followers<br><span class="navcardnumber"></span>123</div>
+                    </div>
+                    <div class="navbarcard">
+                        <div class="navbarcard-body">Following<br><span class="navcardnumber"></span>123</div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-home bx-sm bx-tada-hover'></i>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="marketplace.html">
+                        <i class='bx bxs-shopping-bags bx-sm bx-tada-hover'></i>
+                        Market Place
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-bell bx-sm bx-tada-hover'></i>
+                        Notifications
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-camera bx-sm bx-tada-hover'></i>
+                        UPLOAD POST
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-user-circle bx-sm bx-tada-hover'></i>
+                        Your Profile
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-question-mark bx-sm bx-tada-hover'></i>
+                        FAQ
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-user-account bx-sm bx-tada-hover'></i>
+                        Contact us
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-user-account bx-sm bx-tada-hover'></i>
+                        Logout
+                    </a>
+                </li>
+
+            </ul>
+
+
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <div class="d-flex justify-content-between marketnavbar bg-white sticky-top ">
+                <a href="index.html">
+                    <div class="p-2 "><i class='bx bxs-chevron-left bx-sm'></i></div>
+                </a>
+                <div class="p-2 marketplace-title"></div>
+                <div class="p-2 ">
+                    <i class='bx bx-search-alt-2'></i>
+                    <i class='bx bx-bookmark'></i>
+
+                </div>
+
+
+            </div>
+
+            <div class="d-flex justify-content-center postpage">
+                <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs>
+                        <symbol id="icon-heart" viewBox="0 0 32 32">
+                            <path
+                                d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z">
+                            </path>
+                        </symbol>
+                    </defs>
+                </svg>
+                <div class="postcard border">
+                    <!--post header-->
+                    <div class="d-flex  flex-row postheader   ">
+
+                        <div class="p-2"><img src="img_avatar2.png" alt="Avatar" class="postavatar"></div>
+                        <div class="mr-auto  postusertext ">
+                            <span class="post-username">username</span><br>
+                            <span class="posttime"><i class='bx bx-globe'></i> 10h ago</span>
+
+
+                        </div>
+
+                        <div class="p-2 ml-auto">
+                            <a type="button" class="btn btn-sm " data-toggle="modal" data-target="#bottom_modal">
+                                <i class='bx bx-dots-vertical-rounded bx-sm cardmodal'></i>
+                            </a>
+                        </div>
+
+
+
+
+                    </div>
+                    <!--post image-->
+                    <div class="newpost ">
+                        <svg class="icon icon-heart">
+                            <use xlink:href="#icon-heart"></use>
+                        </svg>
+                        <img class=" postimg" src="post1.jpg" alt="Card image">
+                    </div>
+                    <!--post footer-->
+                    <div class="d-flex flex-row  ">
+                        <div class="p-2">
+                            <button type="button" class="btn post-likebtn  btn-sm btn-light">
+                                <i class='bx bxs-heart bx-tada'></i>
+                                <span id="baba">0</span></button>
+                        </div>
+
+                        <div class=" p-2">
+                            <button type="button" class="btn btn-sm post-sharebtn btn-light"><i
+                                    class='bx bxs-paper-plane '></i></button>
+                        </div>
+
+                        <div class=" p-2 bookmark">
+                            <button type="button" class="btn btn-sm post-savebtn btn-light"><i
+                                    class='bx bx-bookmark-alt '></i></button>
+                        </div>
+
+                    </div>
+                    <!--post text-->
+                    <div class="quotes">
+                        <p> Lorem ipsummmm Loremmmm
+                            <span id="dots">...</span><span id="more">erisque enim ligula
+                                venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor
+                                vitae massa. Fusce
+                                luctus
+                                auctor vitae massa. Fusce luctus
+                                porta.</span>
+
+                            <button onclick="myFunction()" id="myBtn"
+                                class="post-morebtn btn-light btn-sm">More</button>
+                        </p>
+                    </div>
+                    <!--post text-->
+
+                </div>
+            </div>
+            
+
+        </div>
+
+    </div>
+
+
+
+    <!-- MOBILE NAV -->
+    <div class="bottom-navbar"> 
+        
+        <button class=" bottom-navbtn">
+            <a href="index.html"><i class='bx bx-home bx-tada-hover '></i></a> 
+            
+        </button>
+        <button class="bottom-navbtn">
+            <a href="marketplace.html"><i class='bx bx-shopping-bag bx-tada-hover'></i></a>
+        </button>
+        <button
+            class="float bottom-navbtn">
+           <a href="uploadpost.html"><i class='bx bx-plus' ></i></a> 
+        </button>
+        <button class="bottom-navbtn">
+            <a href="notification.html"><i class='bx bx-heart bx-tada-hover '></i></a>
+        </button>
+        <button class="bottom-navbtn">
+            <i class='bx bx-user bx-tada-hover' ></i>
+        </button>
+    </div>
+    
+    <!-- END MOBILE NAV -->
+    <script>
+        function myFunction() {
+            var dots = document.getElementById("dots");
+            var moreText = document.getElementById("more");
+            var btnText = document.getElementById("myBtn");
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "More";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "... Less";
+                moreText.style.display = "inline";
+            }
+        }
+    </script>
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+    <script>
+        const buttons = document.querySelectorAll('.bottom-navbar button:not(.float)')
+        const effect = document.querySelector('.effect')
+        console.log(effect)
+        const container = document.querySelector('.container')
+        let y = 0
+        let moveY = 0
+        let open = false
+    
+        const vh = window.innerHeight * 0.01
+        document.documentElement.style.setProperty('--vh', `${vh}px`)
+        setTimeout(function () {
+          window.scrollTo(0, 1)
+        }, 0)
+        
+        window.addEventListener('touchstart', (evt) => {
+            const area = window.innerHeight - evt.touches[0].clientY
+            y = area
+            console.log(y)
+        })
+    
+        window.addEventListener('touchend', (evt) => {
+            y = 0
+            console.log(moveY)
+            if (moveY > (window.innerHeight / 4)) {
+                anime({
+                    targets: '.container',
+                    translateY: `-${window.innerHeight / 2}px`,
+                    duration: 600,
+                })
+                open = true
+            } else {
+                anime({
+                    targets: '.container',
+                    translateY: `0px`,
+                    duration: 600,
+                    easing: 'easeOutExpo'
+                })
+                open = false
+            }
+        })
+    
+        window.addEventListener('touchmove', (evt) => {
+            moveY = (window.innerHeight - y) - evt.touches[0].clientY
+            console.log(y)
+            if (!open) {
+                anime({
+                    targets: '.container',
+                    translateY: `${moveY <= window.innerHeight / 2 ? moveY > 0 ? -moveY : 0 : -window.innerHeight / 2}px`,
+                    duration: 200,
+                })
+            } else if (open) {
+                moveY = moveY + window.innerHeight / 2
+                anime({
+                    targets: '.container',
+                    translateY: `${moveY <= window.innerHeight / 2 ? moveY > 0 ? -moveY : 0 : -window.innerHeight / 2}px`,
+                    duration: 200,
+                })
+            }
+        })
+    
+        buttons.forEach((item) => {
+            item.addEventListener('click', (evt) => {
+                const x = evt.target.offsetLeft
+                buttons.forEach((btn) => { btn.classList.remove('active') })
+                evt.target.classList.add('active')
+                anime({
+                    targets: '.effect',
+                    left: `${x}px`,
+                    duration: 600,
+                })
+            })
+        })
+    
+        function handleClickPlus(evt) {
+            anime({
+                targets: '.container',
+                translateY: `-${window.innerHeight / 2}px`,
+                duration: 600,
+            })
+            open = true
+            y = window.innerHeight / 2
+            moveY = moveY + window.innerHeight / 2
+        } </script>
+
+
+
+
+
+    <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js">
+    </script>
+
+
+
+</body>
+</html>

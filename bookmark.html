@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Search</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+
+
+    <link rel="stylesheet" href="newstyle.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <!-- Font Awesome JS -->
+    <style>
+        .marketnavbar {
+            font-size: 23px;
+            margin-left: -5px;
+            padding-top: 5px;
+            padding-right: 5px;
+            padding-left: 5px;
+            height: 65px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+
+
+        }
+        .searchimg{
+            height: 300px;
+            border-radius: 10px;
+        }
+        @media only screen and (max-width: 600px) {
+        .searchimg{
+            height: 158px;
+            border-radius: 10px;
+        }
+    }
+        .searchcard{
+            margin: 5px;
+        }
+        .search-page{
+            margin: 5px;
+            margin-top: 10px;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <div class="d-flex  justify-content-around">
+
+                    <img src="img_avatar.png" alt="Avatar" class="sidebaravatar">
+
+                    <div class="navbarprofile">
+
+                        <p class="username">Your Name</p>
+                        <p class="userid">@Your id <button class="btn btn-sm btn-editprofile"><i
+                                    class='bx bxs-message-square-edit bx-md'></i></button></p>
+
+
+
+                    </div>
+
+
+                </div>
+                <div class="d-flex justify-content-around">
+                    <div class="navbarcard">
+                        <div class="navbarcard-body">Followers<br><span class="navcardnumber"></span>123</div>
+                    </div>
+                    <div class="navbarcard">
+                        <div class="navbarcard-body">Following<br><span class="navcardnumber"></span>123</div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-home bx-sm bx-tada-hover'></i>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="marketplace.html">
+                        <i class='bx bxs-shopping-bags bx-sm bx-tada-hover'></i>
+                        Market Place
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-bell bx-sm bx-tada-hover'></i>
+                        Notifications
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-camera bx-sm bx-tada-hover'></i>
+                        UPLOAD POST
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-user-circle bx-sm bx-tada-hover'></i>
+                        Your Profile
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-question-mark bx-sm bx-tada-hover'></i>
+                        FAQ
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-user-account bx-sm bx-tada-hover'></i>
+                        Contact us
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-user-account bx-sm bx-tada-hover'></i>
+                        Logout
+                    </a>
+                </li>
+
+            </ul>
+
+
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <div class="d-flex justify-content-between marketnavbar bg-white sticky-top ">
+                <a href="index.html">
+                    <div class="p-2 "><i class='bx bxs-chevron-left bx-sm'></i></div>
+                </a>
+                <div class="p-2 marketplace-tite">Your Bookmarks</div>
+                <div class="p-2 ">
+                    <i class='bx bx-search-alt-2'></i>
+                    
+
+                </div>
+
+
+            </div>
+
+            
+        </div>
+    </div>
+
+
+
+    <!-- MOBILE NAV -->
+    <div class="bottom-navbar">
+        
+        <button class="bottom-navbtn">
+            <a href="index.html"><i class='bx bx-home bx-tada-hover '></i></a> 
+            
+        </button>
+        <button class="bottom-navbtn">
+            <a href="marketplace.html"><i class='bx bx-shopping-bag bx-tada-hover'></i></a>
+        </button>
+        <button
+            class="float bottom-navbtn">
+           <a href="uploadpost.html"><i class='bx bx-plus' ></i></a> 
+        </button>
+        <button class="bottom-navbtn">
+            <a href="notification.html"><i class='bx bx-heart bx-tada-hover '></i></a>
+        </button>
+        <button class="bottom-navbtn">
+            <a href="profile.html"><i class='bx bx-user bx-tada-hover' ></i></a>
+        </button>
+    </div>
+    
+    <!-- END MOBILE NAV -->
+
+
+
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+    <script>
+        const buttons = document.querySelectorAll('.bottom-navbar button:not(.float)')
+        const effect = document.querySelector('.effect')
+        console.log(effect)
+        const container = document.querySelector('.container')
+        let y = 0
+        let moveY = 0
+        let open = false
+    
+        const vh = window.innerHeight * 0.01
+        document.documentElement.style.setProperty('--vh', `${vh}px`)
+        setTimeout(function () {
+          window.scrollTo(0, 1)
+        }, 0)
+        
+        window.addEventListener('touchstart', (evt) => {
+            const area = window.innerHeight - evt.touches[0].clientY
+            y = area
+            console.log(y)
+        })
+    
+        window.addEventListener('touchend', (evt) => {
+            y = 0
+            console.log(moveY)
+            if (moveY > (window.innerHeight / 4)) {
+                anime({
+                    targets: '.container',
+                    translateY: `-${window.innerHeight / 2}px`,
+                    duration: 600,
+                })
+                open = true
+            } else {
+                anime({
+                    targets: '.container',
+                    translateY: `0px`,
+                    duration: 600,
+                    easing: 'easeOutExpo'
+                })
+                open = false
+            }
+        })
+    
+        window.addEventListener('touchmove', (evt) => {
+            moveY = (window.innerHeight - y) - evt.touches[0].clientY
+            console.log(y)
+            if (!open) {
+                anime({
+                    targets: '.container',
+                    translateY: `${moveY <= window.innerHeight / 2 ? moveY > 0 ? -moveY : 0 : -window.innerHeight / 2}px`,
+                    duration: 200,
+                })
+            } else if (open) {
+                moveY = moveY + window.innerHeight / 2
+                anime({
+                    targets: '.container',
+                    translateY: `${moveY <= window.innerHeight / 2 ? moveY > 0 ? -moveY : 0 : -window.innerHeight / 2}px`,
+                    duration: 200,
+                })
+            }
+        })
+    
+        buttons.forEach((item) => {
+            item.addEventListener('click', (evt) => {
+                const x = evt.target.offsetLeft
+                buttons.forEach((btn) => { btn.classList.remove('active') })
+                evt.target.classList.add('active')
+                anime({
+                    targets: '.effect',
+                    left: `${x}px`,
+                    duration: 600,
+                })
+            })
+        })
+    
+        function handleClickPlus(evt) {
+            anime({
+                targets: '.container',
+                translateY: `-${window.innerHeight / 2}px`,
+                duration: 600,
+            })
+            open = true
+            y = window.innerHeight / 2
+            moveY = moveY + window.innerHeight / 2
+        } </script>
+
+
+
+
+
+    <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js">
+    </script>
+
+
+
+</body>
+</html>

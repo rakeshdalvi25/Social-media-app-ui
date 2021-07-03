@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>fly high</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+
+
+
+    <link rel="stylesheet" href="newstyle.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <!-- Font Awesome JS -->
+    <style>
+        .counts {
+            text-align: center;
+        }
+
+        .countscard-body {
+            padding: 13px;
+        }
+
+        .count-card {
+            border-radius: 20px;
+        }
+
+        .avatarprofile {
+            vertical-align: middle;
+            width: 100px;
+            height: 100px;
+            padding: 2px;
+            margin-left: 5px;
+            border-radius: 50%;
+
+        }
+
+        .profile-head {
+            margin-bottom: 10px;
+            margin-top: 5px;
+        }
+
+        .head-txt {
+            padding: 5px;
+        }
+
+        .prof-postcard {
+            padding: 1%;
+        }
+
+        .card-img-top {
+            border-radius: 10px;
+        }
+
+        .prof-images {
+            margin-top: 15px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <div class="d-flex justify-content-around">
+
+                    <img src="img_avatar.png" alt="Avatar" class="sidebaravatar">
+
+                    <div class="navbarprofile">
+
+                        <p class="username">Your Name</p>
+                        <p class="userid">@Your id <button class="btn btn-sm btn-editprofile"><i
+                                    class='bx bxs-message-square-edit bx-md'></i></button></p>
+
+
+
+                    </div>
+
+
+                </div>
+                <div class="d-flex justify-content-around">
+                    <div class="navbarcard">
+                        <div class="navbarcard-body">Followers<br><span class="navcardnumber"></span>123</div>
+                    </div>
+                    <div class="navbarcard">
+                        <div class="navbarcard-body">Following<br><span class="navcardnumber"></span>123</div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-home bx-sm bx-tada-hover'></i>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="marketplace.html">
+                        <i class='bx bxs-shopping-bags bx-sm bx-tada-hover'></i>
+                        Market Place
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-bell bx-sm bx-tada-hover'></i>
+                        Notifications
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-camera bx-sm bx-tada-hover'></i>
+                        UPLOAD POST
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-user-circle bx-sm bx-tada-hover'></i>
+                        Your Profile
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-question-mark bx-sm bx-tada-hover'></i>
+                        FAQ
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-user-account bx-sm bx-tada-hover'></i>
+                        Contact us
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-user-account bx-sm bx-tada-hover'></i>
+                        Logout
+                    </a>
+                </li>
+
+            </ul>
+
+
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+            <div class="d-flex justify-content-between marketnavbar bg-white sticky-top ">
+                <a href="index.html">
+                    <div class="p-2 "><i class='bx bxs-chevron-left bx-sm'></i></div>
+                </a>
+                <div class="p-2 marketplace-title">Your Profile</div>
+                <div class="p-2 ">
+                    <a href="search.html"> <i class='bx bx-search-alt-2'></i></a>
+                    <a href="bookmark.html"> <i class='bx bx-bookmark'></i></a>
+
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-around profile-head">
+                <div class="p-2"><img src="img_avatar.png" alt="Avatar" class="avatarprofile"></div>
+                <div class="p-2">
+                    <div class="prof-userid head-txt"> user_id</div>
+                    <div class="prof-username head-txt"> User Nameeeeeeee</div>
+                    <div class="prof-btn head-txt"> <button class="btn btn-md btn-primary" data-toggle="modal"
+                            data-target="#myModal">Edit profile</button></div>
+                </div>
+            </div>
+
+
+            <div class="d-flex justify-content-around">
+                <div class="count-card bg-white">
+                    <div class="countscard-body">Followers
+                        <div class="counts">112</div>
+                    </div>
+                </div>
+                <div class="count-card bg-white">
+                    <div class="countscard-body">Followers
+                        <div class="counts">112</div>
+                    </div>
+                </div>
+                <div class="count-card bg-white">
+                    <div class="countscard-body">Followers
+                        <div class="counts">112</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content around prof-images">
+                <div class="prof-postcard ">
+                    <img class="card-img-top" src="img_avatar.png" alt="Card image">
+                </div>
+                <div class="prof-postcard ">
+                    <img class="card-img-top" src="img_avatar.png" alt="Card image">
+                </div>
+                <div class="prof-postcard ">
+                    <img class="card-img-top" src="img_avatar.png" alt="Card image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MOBILE NAV -->
+    <div class="bottom-navbar">
+
+        <button class=" bottom-navbtn">
+            <a href="index.html"><i class='bx bx-home bx-tada-hover '></i></a>
+
+        </button>
+        <button class="bottom-navbtn">
+            <a href="marketplace.html"><i class='bx bx-shopping-bag bx-tada-hover'></i></a>
+        </button>
+        <button class="float bottom-navbtn">
+            <a href="uploadpost.html"><i class='bx bx-plus'></i></a>
+        </button>
+        <button class="bottom-navbtn">
+            <a href="notification.html"><i class='bx bx-heart bx-tada-hover '></i></a>
+        </button>
+        <button class="active bottom-navbtn">
+            <a href="profile.html"><i class='bx bx-user bx-tada-hover'></i></a>
+        </button>
+    </div>
+
+    <!-- END MOBILE NAV -->
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h1 class="modal-title">Modal Heading</h1>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <h3>Some text to enable scrolling..</h3>
+                    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                        laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat.</p>
+                    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                        laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat.</p>
+
+                    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                        laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat.</p>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js">
+    </script>
+
+
+
+</body>
+
+</html>

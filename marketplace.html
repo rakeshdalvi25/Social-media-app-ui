@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Marketplace</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <link rel="stylesheet" href="newstyle.css">
+
+    <style>
+        .body {
+            background-color: white;
+        }
+
+        .marketnavbar {
+            font-size: 23px;
+            margin-left: -5px;
+            padding-top: 5px;
+            padding-right: 5px;
+            padding-left: 5px;
+            height: 65px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+
+
+        }
+
+        .market-market-scroll {
+            display: inline-flex;
+            padding-bottom: 15px;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .market-market-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .market-market-scroll {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+
+
+        .marketmarket-card {
+            margin: 8px;
+            width: 100px;
+            border-radius: 20px;
+            height: auto;
+        }
+
+        .figure {
+            margin-bottom: -15px;
+            margin-top: -10px;
+        }
+
+        .card-body {
+            padding-bottom: 3%;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .marketcard-img {
+                width: 170px;
+
+            }
+
+
+        }
+
+
+        .marketplacemarket-s {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .marketplace-title {
+            margin-left: 20px;
+        }
+
+        .market-card {
+            padding: 1%;
+            padding-bottom: 0%;
+            margin-top: 10px;
+            border-radius: 20px;
+
+            margin-right: 5px;
+            margin-left: 5px;
+            margin-bottom: 15px;
+
+        }
+
+        .market-bottom-card {
+            padding: 1%;
+            padding-bottom: 0%;
+            margin-top: 10px;
+            border-radius: 20px;
+            margin-left: -5px;
+            margin-right: 20px;
+            margin-bottom: 15px;
+
+        }
+
+        .market-cardtop {
+            margin-top: -5px;
+        }
+
+        .marketcard-img {
+            width: 200px;
+            height: auto;
+        }
+
+        .market-offers {
+            padding-bottom: 10px;
+
+        }
+
+        .product-mini {
+            margin-top: -10px;
+        }
+
+        .product-name {
+            font-weight: bold;
+        }
+
+        .product-avatar {
+            vertical-align: middle;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+        }
+
+        .discountproduct-avatar {
+            vertical-align: middle;
+            margin-top: -10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+
+        }
+
+        .ratedcards {
+            display: inline-flex;
+            overflow-x: auto;
+        }
+
+        .onsalecard {
+            display: inline-flex;
+            overflow-x: auto;
+        }
+
+        .market-bottom-card-img {
+            width: 150px;
+            height: auto;
+        }
+
+        .market-ad {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .market-ad-card {
+            border-radius: 20px;
+            margin-right: 90px;
+            margin-left: 90px;
+        }
+
+        .market-top-image {
+            height: 250px;
+            width: auto;
+
+        }
+
+        .marketcardtxt {
+            margin-left: 90px;
+            margin-top: 50px;
+        }
+
+        .btn-ad {
+            margin-right: 200px;
+            margin-top: -20px;
+            background-color: #ff9494;
+            border-radius: 20px;
+            color: white;
+            font-weight: bold;
+            font-size: 17px;
+
+        }
+
+
+        @media only screen and (max-width: 600px) {
+            .market-ad-card {
+
+                margin-right: 0%;
+                margin-left: 0%;
+            }
+
+            .market-top-image {
+                height: 150px;
+                width: auto;
+                margin-left: -15px;
+            }
+
+            .marketcardtxt {
+                margin-left: 0%;
+                margin-top: 0%;
+
+            }
+
+            .btn-ad {
+                margin-right: 20px;
+                margin-top: -20px;
+                background-color: #ff9494;
+            }
+
+
+        }
+
+        .allprod {
+            margin-bottom: 50px;
+        }
+        .ad-head1{
+            font-weight: 400;
+
+    font-size: 18px;
+    color: rgb(232, 76, 79);
+
+        }
+        .marketcardtxt1{
+            font-size: 13px;
+            color: black;
+        }
+        .marketad1{
+            width: 100%;
+    padding-top: 20px;
+    border-radius: 20px
+        }
+        .carousel {
+  background: #ffffff;
+}
+.ads-slogan h1 {
+  text-align: center;
+  font-size: 50px;
+}
+
+.carousel-cell {
+  width: 66%;
+  height: 170px;
+  margin-right: 10px;
+
+  background: #8c8;
+  border-radius: 5px;
+  counter-increment: gallery-cell;
+}
+
+/* cell number */
+.carousel-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(gallery-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+.carousel img {
+  display: block;
+  height: 100px;
+}
+
+@media screen and (min-width: 768px) {
+  .carousel img {
+    height: 300px;
+    display: block;
+    border-radius: 20px;
+    margin: 0px 10px 20px 10px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .carousel img {
+    height: 200px;
+    display: block;
+    border-radius: 20px;
+    margin: 0px 10px 20px 10px;
+  }
+  .adscarousel {
+    margin-top: -30px;
+    margin-bottom: 20px;
+  }
+  .eventcard {
+    margin: 15px;
+  }
+}
+.adscarousel {
+  margin-top: -30px;
+  margin-bottom: 20px;
+}
+    </style>
+    
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <!-- Font Awesome JS -->
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <div class="d-flex justify-content-around">
+
+                    <img src="img_avatar.png" alt="Avatar" class="sidebaravatar">
+
+                    <div class="navbarprofile">
+
+                        <p class="username">Your Name</p>
+                        <p class="userid">@Your id <button class="btn btn-sm btn-editprofile"><i
+                                    class='bx bxs-message-square-edit bx-md'></i></button></p>
+
+
+
+                    </div>
+
+
+                </div>
+                <div class="d-flex justify-content-around">
+                    <div class="navbarcard">
+                        <div class="navbarcard-body">Followers<br><span class="navcardnumber"></span>123</div>
+                    </div>
+                    <div class="navbarcard">
+                        <div class="navbarcard-body">Following<br><span class="navcardnumber"></span>123</div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-home bx-sm bx-tada-hover'></i>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="marketplace.html">
+                        <i class='bx bxs-shopping-bags bx-sm bx-tada-hover'></i>
+                        Market Place
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-bell bx-sm bx-tada-hover'></i>
+                        Notifications
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-camera bx-sm bx-tada-hover'></i>
+                        UPLOAD POST
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-user-circle bx-sm bx-tada-hover'></i>
+                        Your Profile
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-question-mark bx-sm bx-tada-hover'></i>
+                        FAQ
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-user-account bx-sm bx-tada-hover'></i>
+                        Contact us
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-user-account bx-sm bx-tada-hover'></i>
+                        Logout
+                    </a>
+                </li>
+
+            </ul>
+
+
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+            <div class="d-flex justify-content-between marketnavbar bg-white sticky-top ">
+                <a href="index.html">
+                    <div class="p-2 "><i class='bx bxs-chevron-left bx-sm'></i></div>
+                </a>
+                <div class="p-2 marketplace-title">Market</div>
+                <div class="p-2 ">
+                   <a href="search.html"> <i class='bx bx-search-alt-2'></i></a>
+                   <a href="bookmark.html"> <i class='bx bx-bookmark'></i></a>
+
+                </div>
+
+
+            </div>
+
+            <div class="container-fluid market-ad">
+                <div class="market-ad-card border bg-white">
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <div class="p-2"><img src="market-ad-card.png" class="market-top-image" alt="Cinque Terre">
+                            </div>
+                            <div class="mr-auto p-2 text-center">
+                                <p class="ad-head1">Our Womens Marketplace</p>
+
+                                <p class="marketcardtxt1">There is no limit to</br>
+                                what we, as women, can accomplish.
+                                </p>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end"><button class="btn btn-md btn-ad"><span>Visit Now </span> <i
+                            class='bx bx-chevron-right-circle '></i></button></div>
+
+            </div>
+
+            
+
+            <!--store nav content start-->
+            <div class="tab-content">
+                <div class="tab-pane container active" id="following">
+
+                    <div class="container-fluid">
+                        <div class="carousel"
+                        data-flickity='{ "autoPlay": true , "wrapAround": true, "pageDots": false, "prevNextButtons": false }'>
+            
+                        <img src="{% static 'images/landing/slide1.png'%}">
+                        <img src="{% static 'images/landing/slide2.png'%}">
+                        <img src="{% static 'images/landing/slide3.png'%}">
+                        <img src="{% static 'images/landing/slide4.png'%}">
+                        <img src="{% static 'images/landing/slide5.png'%}">
+                    </div>
+                    </div>
+                    <div class="d-flex  marketplacemarket-s">
+                        <div class="p-2 m-2 text-center ">Store you follow</div>
+
+
+
+                    </div>
+                    <div class="container-fluid market-market-scroll">
+                        <div class="marketmarket-card border bg-white">
+                            <div class="card-body">
+                                <figure class="figure">
+                                    <img src="Apple-logo.png" class="figure-img img-fluid rounded" alt="">
+                                    <figcaption class="figure-caption text-center ">market name</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+
+
+
+                        <div class="marketmarket-card border bg-white">
+                            <div class="card-body">
+                                <figure class="figure">
+                                    <img src="Apple-logo.png" class="figure-img img-fluid rounded" alt="">
+                                    <figcaption class="figure-caption text-center ">market name</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="marketmarket-card border bg-white">
+                            <div class="card-body">
+                                <figure class="figure">
+                                    <img src="Apple-logo.png" class="figure-img img-fluid rounded" alt="">
+                                    <figcaption class="figure-caption text-center ">market name</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="marketmarket-card border bg-white">
+                            <div class="card-body">
+                                <figure class="figure">
+                                    <img src="Apple-logo.png" class="figure-img img-fluid rounded" alt="">
+                                    <figcaption class="figure-caption text-center ">market name</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="marketmarket-card border bg-white">
+                            <div class="card-body">
+                                <figure class="figure">
+                                    <img src="Apple-logo.png" class="figure-img img-fluid rounded" alt="">
+                                    <figcaption class="figure-caption text-center ">market name</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="marketmarket-card border bg-white">
+                            <div class="card-body">
+                                <figure class="figure">
+                                    <img src="Apple-logo.png" class="figure-img img-fluid rounded" alt="">
+                                    <figcaption class="figure-caption text-center ">market name</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="marketmarket-card border bg-white">
+                            <div class="card-body">
+                                <figure class="figure">
+                                    <img src="Apple-logo.png" class="figure-img img-fluid rounded" alt="">
+                                    <figcaption class="figure-caption text-center ">market name</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="marketmarket-card border bg-white">
+                            <div class="card-body">
+                                <figure class="figure">
+                                    <img src="Apple-logo.png" class="figure-img img-fluid rounded" alt="">
+                                    <figcaption class="figure-caption text-center ">market name</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="marketmarket-card border bg-white">
+                            <div class="card-body">
+                                <figure class="figure">
+                                    <img src="Apple-logo.png" class="figure-img img-fluid rounded" alt="">
+                                    <figcaption class="figure-caption text-center ">market name</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <p class="discovertext">&nbsp; All Product</p>
+                    <!--market bottom start-->
+                    <div class=" d-flex flex-wrap justify-content-center allprod ">
+
+
+                        <!--product card start-->
+                        <div class="market-card border bg-white">
+                            <div class="d-flex market-cardtop">
+                                <div class="p-2 mr-auto "><img src="img_avatar.png" alt="Avatar"
+                                        class="product-avatar">&nbsp;&nbsp;Username</div>
+
+                            </div>
+                            <img class="market-bottom-card-img" src="marketcard.jpg" alt="Card image">
+                            <div class="d-flex ">
+                                <div class="p-2 mr-auto product-mini "><a href="#"><span class="product-name">Polo
+                                            T-Shirt</span></br>
+                                        <span>&#8377 500</span></a>
+                                </div>
+                                <div class="p-2 "><i class='bx bx-bookmark bx-sm'></i></div>
+                            </div>
+                        </div>
+                        <div class="market-card border bg-white">
+                            <div class="d-flex market-cardtop">
+                                <div class="p-2 mr-auto "><img src="img_avatar.png" alt="Avatar"
+                                        class="product-avatar">&nbsp;&nbsp;Username</div>
+
+                            </div>
+                            <img class="market-bottom-card-img" src="marketcard.jpg" alt="Card image">
+                            <div class="d-flex ">
+                                <div class="p-2 mr-auto product-mini "><a href="#"><span class="product-name">Polo
+                                            T-Shirt</span></br>
+                                        <span>&#8377 500</span></a>
+                                </div>
+                                <div class="p-2 "><i class='bx bx-bookmark bx-sm'></i></div>
+                            </div>
+                        </div>
+                        <!--product card end-->
+                        <!--product card start-->
+                        <div class="market-card border bg-white">
+                            <div class="d-flex market-cardtop">
+                                <div class="p-2 mr-auto "><img src="img_avatar.png" alt="Avatar"
+                                        class="product-avatar">&nbsp;&nbsp;Username</div>
+
+                            </div>
+                            <img class="market-bottom-card-img" src="marketcard.jpg" alt="Card image">
+                            <div class="d-flex ">
+                                <div class="p-2 mr-auto product-mini "><a href="#"><span class="product-name">Polo
+                                            T-Shirt</span></br>
+                                        <span>&#8377 500</span></a>
+                                </div>
+                                <div class="p-2 "><i class='bx bx-bookmark bx-sm'></i></div>
+                            </div>
+                        </div>
+                        <div class="market-card border bg-white">
+                            <div class="d-flex market-cardtop">
+                                <div class="p-2 mr-auto "><img src="img_avatar.png" alt="Avatar"
+                                        class="product-avatar">&nbsp;&nbsp;Username</div>
+
+                            </div>
+                            <img class="market-bottom-card-img" src="marketcard.jpg" alt="Card image">
+                            <div class="d-flex ">
+                                <div class="p-2 mr-auto product-mini "><a href="#"><span class="product-name">Polo
+                                            T-Shirt</span></br>
+                                        <span>&#8377 500</span></a>
+                                </div>
+                                <div class="p-2 "><i class='bx bx-bookmark bx-sm'></i></div>
+                            </div>
+                        </div>
+                        <!--product card end-->
+
+
+                    </div>
+                    <!--market bottom end-->
+                </div>
+        
+               
+            </div>
+            <!--store nav content end-->
+
+        </div>
+
+
+
+
+
+    </div>
+    <!-- MOBILE NAV -->
+    <div class="bottom-navbar">
+       
+        <button class=" bottom-navbtn">
+            <a href="index.html"><i class='bx bx-home bx-tada-hover '></i></a> 
+            
+        </button>
+        <button class="bottom-navbtn active">
+            <a href="marketplace.html"><i class='bx bx-shopping-bag bx-tada-hover'></i></a>
+        </button>
+        <button
+            class="float bottom-navbtn">
+           <a href="uploadpost.html"><i class='bx bx-plus bx-tada-hover' ></i></a> 
+        </button>
+        <button class="bottom-navbtn">
+            <a href="notification.html"><i class='bx bx-heart bx-tada-hover '></i></a>
+        </button>
+        <button class="bottom-navbtn">
+            <i class='bx bx-user bx-tada-hover' ></i>
+        </button>
+    </div>
+    
+
+
+
+
+
+
+
+    <script>
+        const buttons = document.querySelectorAll('.bottom-navbar button:not(.float)')
+        const effect = document.querySelector('.effect')
+        console.log(effect)
+        const container = document.querySelector('.container')
+        let y = 0
+        let moveY = 0
+        let open = false
+    
+        const vh = window.innerHeight * 0.01
+        document.documentElement.style.setProperty('--vh', `${vh}px`)
+        setTimeout(function () {
+          window.scrollTo(0, 1)
+        }, 0)
+        
+        window.addEventListener('touchstart', (evt) => {
+            const area = window.innerHeight - evt.touches[0].clientY
+            y = area
+            console.log(y)
+        })
+    
+        window.addEventListener('touchend', (evt) => {
+            y = 0
+            console.log(moveY)
+            if (moveY > (window.innerHeight / 4)) {
+                anime({
+                    targets: '.container',
+                    translateY: `-${window.innerHeight / 2}px`,
+                    duration: 600,
+                })
+                open = true
+            } else {
+                anime({
+                    targets: '.container',
+                    translateY: `0px`,
+                    duration: 600,
+                    easing: 'easeOutExpo'
+                })
+                open = false
+            }
+        })
+    
+        window.addEventListener('touchmove', (evt) => {
+            moveY = (window.innerHeight - y) - evt.touches[0].clientY
+            console.log(y)
+            if (!open) {
+                anime({
+                    targets: '.container',
+                    translateY: `${moveY <= window.innerHeight / 2 ? moveY > 0 ? -moveY : 0 : -window.innerHeight / 2}px`,
+                    duration: 200,
+                })
+            } else if (open) {
+                moveY = moveY + window.innerHeight / 2
+                anime({
+                    targets: '.container',
+                    translateY: `${moveY <= window.innerHeight / 2 ? moveY > 0 ? -moveY : 0 : -window.innerHeight / 2}px`,
+                    duration: 200,
+                })
+            }
+        })
+    
+        buttons.forEach((item) => {
+            item.addEventListener('click', (evt) => {
+                const x = evt.target.offsetLeft
+                buttons.forEach((btn) => { btn.classList.remove('active') })
+                evt.target.classList.add('active')
+                anime({
+                    targets: '.effect',
+                    left: `${x}px`,
+                    duration: 600,
+                })
+            })
+        })
+    
+        function handleClickPlus(evt) {
+            anime({
+                targets: '.container',
+                translateY: `-${window.innerHeight / 2}px`,
+                duration: 600,
+            })
+            open = true
+            y = window.innerHeight / 2
+            moveY = moveY + window.innerHeight / 2
+        } </script>
+
+    
+</body>
+
+</html>

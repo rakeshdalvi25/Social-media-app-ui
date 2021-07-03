@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Search</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+
+
+
+    <link rel="stylesheet" href="newstyle.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <!-- Font Awesome JS -->
+    <style>
+         
+    
+
+    .bottom-navbar {
+        position: fixed;
+        bottom: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        background: #fff;
+        border-radius: 30px 30px 0px 0px;
+        padding: 10px 0px;
+        box-shadow: 0px 0px 30px 0px rgba(0,0,0,.05);
+    }
+    .bottom-navbar button {
+        width: 60px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 0px;
+        background: transparent;
+        border-radius: 20px;
+        transition: all .25s ease;
+    }
+    .bottom-navbar button:active:not(.float) {
+        transform: scale(1.2);
+    }
+    .bottom-navbar button.float {
+        margin-top: -50px;
+        background: rgb(232, 76, 79);
+        color: #fff;
+        border-radius: 25px;
+        height: 60px;
+        box-shadow: 0px 10px 20px 0px rgba(232, 76, 79, .4);
+    }
+    .bottom-navbar button.active {
+        color: rgb(232, 76, 79);
+    }
+    .bottom-navbar button i {
+        font-size: 1.5rem;
+        pointer-events: none;
+    }
+    .con-effect {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        overflow: hidden;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .effect {
+        background: rgba(232, 76, 79, .15);
+        width: 60px;
+        height: 50px;
+        position: absolute;
+        left: 13px;
+        border-radius: 18px;
+    }
+    .bottom-navbtn{
+        border: none;
+    }
+
+    </style>
+
+
+</head>
+
+<body>
+    <div class="bottom-navbar">
+        <div class="con-effect">
+            <div class="effect"></div>
+        </div>
+        <button class="active bottom-navbtn">
+            <i class='bx bx-home bx-tada-hover '></i>
+        </button>
+        <button class="bottom-navbtn">
+            <i class='bx bx-shopping-bag bx-tada-hover'></i>
+        </button>
+        <button
+            class="float bottom-navbtn">
+            <i class='bx bx-plus' ></i>
+        </button>
+        <button class="bottom-navbtn">
+            <i class='bx bx-heart bx-tada-hover '></i>
+        </button>
+        <button class="bottom-navbtn">
+            <i class='bx bx-user bx-tada-hover' ></i>
+        </button>
+    </div>
+    
+
+
+    <script>
+        const buttons = document.querySelectorAll('.bottom-navbar button:not(.float)')
+        const effect = document.querySelector('.effect')
+        console.log(effect)
+        const container = document.querySelector('.container')
+        let y = 0
+        let moveY = 0
+        let open = false
+    
+        const vh = window.innerHeight * 0.01
+        document.documentElement.style.setProperty('--vh', `${vh}px`)
+        setTimeout(function () {
+          window.scrollTo(0, 1)
+        }, 0)
+        
+        window.addEventListener('touchstart', (evt) => {
+            const area = window.innerHeight - evt.touches[0].clientY
+            y = area
+            console.log(y)
+        })
+    
+        window.addEventListener('touchend', (evt) => {
+            y = 0
+            console.log(moveY)
+            if (moveY > (window.innerHeight / 4)) {
+                anime({
+                    targets: '.container',
+                    translateY: `-${window.innerHeight / 2}px`,
+                    duration: 600,
+                })
+                open = true
+            } else {
+                anime({
+                    targets: '.container',
+                    translateY: `0px`,
+                    duration: 600,
+                    easing: 'easeOutExpo'
+                })
+                open = false
+            }
+        })
+    
+        window.addEventListener('touchmove', (evt) => {
+            moveY = (window.innerHeight - y) - evt.touches[0].clientY
+            console.log(y)
+            if (!open) {
+                anime({
+                    targets: '.container',
+                    translateY: `${moveY <= window.innerHeight / 2 ? moveY > 0 ? -moveY : 0 : -window.innerHeight / 2}px`,
+                    duration: 200,
+                })
+            } else if (open) {
+                moveY = moveY + window.innerHeight / 2
+                anime({
+                    targets: '.container',
+                    translateY: `${moveY <= window.innerHeight / 2 ? moveY > 0 ? -moveY : 0 : -window.innerHeight / 2}px`,
+                    duration: 200,
+                })
+            }
+        })
+    
+        buttons.forEach((item) => {
+            item.addEventListener('click', (evt) => {
+                const x = evt.target.offsetLeft
+                buttons.forEach((btn) => { btn.classList.remove('active') })
+                evt.target.classList.add('active')
+                anime({
+                    targets: '.effect',
+                    left: `${x}px`,
+                    duration: 600,
+                })
+            })
+        })
+    
+        function handleClickPlus(evt) {
+            anime({
+                targets: '.container',
+                translateY: `-${window.innerHeight / 2}px`,
+                duration: 600,
+            })
+            open = true
+            y = window.innerHeight / 2
+            moveY = moveY + window.innerHeight / 2
+        } </script>
+    </body>
+    
+    </html>
