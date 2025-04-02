@@ -4,6 +4,9 @@ This social media app UI was meticulously crafted using Bootstrap 4, leveraging 
 
 # Live Preview 
 https://rakeshdalvi25.github.io/Social-media-app-ui/
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for more details.
  
 # The following screenshots showcase the key screens of the UI :
 ![Bootstrap 4 Social Media UI 1](https://github.com/user-attachments/assets/13198c18-ec1a-412d-9382-b1c0df1aec22)
